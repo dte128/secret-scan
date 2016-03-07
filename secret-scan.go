@@ -15,8 +15,9 @@ var (
     start = kingpin.Arg("dir", "Directory to start processing in").String()
     concur = kingpin.Flag("concurrency", "Number of concurrent threads").Default("1").Short('c').Int()
     wg sync.WaitGroup
+    lg sync.WaitGroup
     file_list chan string
-    )
+)
 
 func walkfunc(path string, _ os.FileInfo, _ error) error {
     file_list <-path
