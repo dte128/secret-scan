@@ -60,6 +60,10 @@ func scanfile(path string) error {
         if match {
             fmt.Printf("%s\t%s\n", path, current)
         }
+        match, _ = regexp.MatchString("[pP]assword", current)
+        if match {
+            fmt.Printf("%s\t%s\n", path, current)
+        }
     }
 
     return nil
